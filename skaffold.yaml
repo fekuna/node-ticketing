@@ -10,6 +10,14 @@ build:
             src: src/**/*.ts
       docker:
         dockerfile: Dockerfile
+    - image: fekuna/ticketing-client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: '**/*.js'
   local:
     push: false
 manifests:
